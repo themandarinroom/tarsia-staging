@@ -1,0 +1,35 @@
+/* The Mandarin Room shared header brand v1.
+   Copied unchanged into each app; requires tmr-tokens.css.
+   Markup:
+   <div class="tmr-brand">
+     <a class="tmr-emblem-link" href="HOME" aria-label="The Mandarin Room home"><img class="tmr-emblem" src="…/emblem-header.png" width="56" height="53" alt=""></a>
+     <span class="tmr-brand-text">
+       <a class="tmr-home-link" href="HOME">The Mandarin Room</a>
+       <a class="tmr-app-link" href="APP">App name</a>
+     </span>
+   </div>
+   HOME = The Mandarin Room homepage; APP = verified entry on the official website. */
+.tmr-brand{display:flex;align-items:center;gap:14px;flex-shrink:0;min-width:0}
+.tmr-emblem-link{display:block;flex-shrink:0;line-height:0}
+.tmr-emblem{display:block;width:var(--tmr-header-logo,56px);height:auto}
+.tmr-brand-text{display:flex;flex-direction:column;min-width:0}
+.tmr-home-link,.tmr-app-link{color:var(--tmr-ink,#0c193b);text-decoration:none;font-family:var(--tmr-font-ui,"Avenir Next",Avenir,"Segoe UI",Arial,sans-serif)}
+.tmr-home-link{font-size:22px;font-weight:650;letter-spacing:-.5px;line-height:1.2}
+.tmr-app-link{margin-top:2px;color:var(--tmr-muted,#617797);font-size:14px;font-weight:550;line-height:1.3}
+.tmr-home-link:hover,.tmr-app-link:hover{text-decoration:underline;text-underline-offset:3px}
+.tmr-emblem-link:focus-visible,.tmr-home-link:focus-visible,.tmr-app-link:focus-visible{outline:3px solid #216daf;outline-offset:3px;border-radius:4px}
+@media (max-width:700px){
+  .tmr-brand{gap:11px}
+  .tmr-emblem{width:var(--tmr-header-logo-small,44px)}
+  .tmr-home-link{font-size:19px}
+  .tmr-app-link{font-size:13px}
+}
+
+/* Unified Tool Header v1.0: compact baseline; larger targets on touch devices. */
+.tmr-brand{flex-shrink:1;max-width:100%}
+.tmr-emblem-link{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+.tmr-home-link,.tmr-app-link{display:flex;align-items:center;width:fit-content;max-width:100%;overflow-wrap:anywhere}
+.tmr-emblem-link:hover{filter:brightness(.92)}
+.tmr-unified-header{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;width:100%;max-width:none;margin:0;min-height:84px;padding:max(12px,env(safe-area-inset-top)) max(3.6vw,20px) 12px;background:#fff;box-shadow:var(--tmr-shadow-header,0 3px 14px #14223908);position:relative;z-index:2}
+@media(max-width:700px){.tmr-unified-header{padding-left:18px;padding-right:18px}}
+@media(pointer:coarse){.tmr-home-link,.tmr-app-link{min-height:44px}.tmr-app-link{margin-top:0}}
